@@ -1,5 +1,5 @@
 import React from 'react';
-import { InertiaLink } from '@inertiajs/inertia-react';
+import { Link } from '@inertiajs/react';
 import classNames from 'classnames';
 
 const PageLink = ({ active, label, url }) => {
@@ -17,9 +17,9 @@ const PageLink = ({ active, label, url }) => {
     }
   );
   return (
-    <InertiaLink className={className} href={url}>
+    <Link className={className} href={url}>
       <span dangerouslySetInnerHTML={{ __html: label }}></span>
-    </InertiaLink>
+    </Link>
   );
 };
 

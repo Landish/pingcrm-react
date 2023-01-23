@@ -1,7 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Inertia } from '@inertiajs/inertia';
-import { InertiaLink, usePage, useForm } from '@inertiajs/inertia-react';
+import { Link, usePage, useForm, router } from '@inertiajs/react';
 import Layout from '@/Shared/Layout';
 import DeleteButton from '@/Shared/DeleteButton';
 import LoadingButton from '@/Shared/LoadingButton';
@@ -30,13 +29,13 @@ const Edit = () => {
 
   function destroy() {
     if (confirm('Are you sure you want to delete this organization?')) {
-      Inertia.delete(route('organizations.destroy', organization.id));
+      router.delete(route('organizations.destroy', organization.id));
     }
   }
 
   function restore() {
     if (confirm('Are you sure you want to restore this organization?')) {
-      Inertia.put(route('organizations.restore', organization.id));
+      router.put(route('organizations.restore', organization.id));
     }
   }
 
@@ -44,12 +43,12 @@ const Edit = () => {
     <div>
       <Helmet title={data.name} />
       <h1 className="mb-8 text-3xl font-bold">
-        <InertiaLink
+        <Link
           href={route('organizations')}
           className="text-indigo-600 hover:text-indigo-700"
         >
           Organizations
-        </InertiaLink>
+        </Link>
         <span className="mx-2 font-medium text-indigo-600">/</span>
         {data.name}
       </h1>
@@ -173,7 +172,7 @@ const Edit = () => {
                     className="hover:bg-gray-100 focus-within:bg-gray-100"
                   >
                     <td className="border-t">
-                      <InertiaLink
+                      <Link
                         href={route('contacts.edit', id)}
                         className="flex items-center px-6 py-4 focus:text-indigo focus:outline-none"
                       >
@@ -184,28 +183,28 @@ const Edit = () => {
                             className="flex-shrink-0 w-3 h-3 ml-2 text-gray-400 fill-current"
                           />
                         )}
-                      </InertiaLink>
+                      </Link>
                     </td>
                     <td className="border-t">
-                      <InertiaLink
+                      <Link
                         tabIndex="-1"
                         href={route('contacts.edit', id)}
                         className="flex items-center px-6 py-4 focus:text-indigo focus:outline-none"
                       >
                         {city}
-                      </InertiaLink>
+                      </Link>
                     </td>
                     <td className="border-t">
-                      <InertiaLink
+                      <Link
                         tabIndex="-1"
                         href={route('contacts.edit', id)}
                         className="flex items-center px-6 py-4 focus:text-indigo focus:outline-none"
                       >
                         {phone}
-                      </InertiaLink>
+                      </Link>
                     </td>
                     <td className="w-px border-t">
-                      <InertiaLink
+                      <Link
                         tabIndex="-1"
                         href={route('contacts.edit', id)}
                         className="flex items-center px-4"
@@ -214,7 +213,7 @@ const Edit = () => {
                           name="cheveron-right"
                           className="block w-6 h-6 text-gray-400 fill-current"
                         />
-                      </InertiaLink>
+                      </Link>
                     </td>
                   </tr>
                 );

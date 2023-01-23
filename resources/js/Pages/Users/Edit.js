@@ -1,7 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Inertia } from '@inertiajs/inertia';
-import { InertiaLink, usePage, useForm } from '@inertiajs/inertia-react';
+import { Link, usePage, useForm, router} from '@inertiajs/react';
 import Layout from '@/Shared/Layout';
 import DeleteButton from '@/Shared/DeleteButton';
 import LoadingButton from '@/Shared/LoadingButton';
@@ -34,13 +33,13 @@ const Edit = () => {
 
   function destroy() {
     if (confirm('Are you sure you want to delete this user?')) {
-      Inertia.delete(route('users.destroy', user.id));
+      router.delete(route('users.destroy', user.id));
     }
   }
 
   function restore() {
     if (confirm('Are you sure you want to restore this user?')) {
-      Inertia.put(route('users.restore', user.id));
+      router.put(route('users.restore', user.id));
     }
   }
 
@@ -49,12 +48,12 @@ const Edit = () => {
       <Helmet title={`${data.first_name} ${data.last_name}`} />
       <div className="flex justify-start max-w-lg mb-8">
         <h1 className="text-3xl font-bold">
-          <InertiaLink
+          <Link
             href={route('users')}
             className="text-indigo-600 hover:text-indigo-700"
           >
             Users
-          </InertiaLink>
+          </Link>
           <span className="mx-2 font-medium text-indigo-600">/</span>
           {data.first_name} {data.last_name}
         </h1>

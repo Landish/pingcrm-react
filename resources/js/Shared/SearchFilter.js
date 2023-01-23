@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Inertia } from '@inertiajs/inertia';
-import { usePage } from '@inertiajs/inertia-react';
+import { usePage, router } from '@inertiajs/react';
 import { usePrevious } from 'react-use';
 import SelectInput from '@/Shared/SelectInput';
 import pickBy from 'lodash/pickBy';
@@ -31,7 +30,7 @@ export default () => {
       const query = Object.keys(pickBy(values)).length
         ? pickBy(values)
         : { remember: 'forget' };
-      Inertia.get(route(route().current()), query, {
+      router.get(route(route().current()), query, {
         replace: true,
         preserveState: true
       });

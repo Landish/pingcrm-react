@@ -1,6 +1,5 @@
 import React from 'react';
-import { Inertia } from '@inertiajs/inertia';
-import { InertiaLink, useForm } from '@inertiajs/inertia-react';
+import { Link, useForm } from '@inertiajs/react';
 import Layout from '@/Shared/Layout';
 import LoadingButton from '@/Shared/LoadingButton';
 import TextInput from '@/Shared/TextInput';
@@ -26,12 +25,12 @@ const Create = () => {
     <div>
       <div>
         <h1 className="mb-8 text-3xl font-bold">
-          <InertiaLink
+          <Link
             href={route('users')}
             className="text-indigo-600 hover:text-indigo-700"
           >
             Users
-          </InertiaLink>
+          </Link>
           <span className="font-medium text-indigo-600"> /</span> Create
         </h1>
       </div>

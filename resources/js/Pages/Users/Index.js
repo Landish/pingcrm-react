@@ -1,5 +1,5 @@
 import React from 'react';
-import { InertiaLink, usePage } from '@inertiajs/inertia-react';
+import { Link, usePage } from '@inertiajs/react';
 import Layout from '@/Shared/Layout';
 import Icon from '@/Shared/Icon';
 import SearchFilter from '@/Shared/SearchFilter';
@@ -16,13 +16,13 @@ const Index = () => {
       <h1 className="mb-8 text-3xl font-bold">Users</h1>
       <div className="flex items-center justify-between mb-6">
         <SearchFilter />
-        <InertiaLink
+        <Link
           className="btn-indigo focus:outline-none"
           href={route('users.create')}
         >
           <span>Create</span>
           <span className="hidden md:inline"> User</span>
-        </InertiaLink>
+        </Link>
       </div>
       <div className="overflow-x-auto bg-white rounded shadow">
         <table className="w-full whitespace-nowrap">
@@ -43,7 +43,7 @@ const Index = () => {
                   className="hover:bg-gray-100 focus-within:bg-gray-100"
                 >
                   <td className="border-t">
-                    <InertiaLink
+                    <Link
                       href={route('users.edit', id)}
                       className="flex items-center px-6 py-4 focus:text-indigo-700 focus:outline-none"
                     >
@@ -60,28 +60,28 @@ const Index = () => {
                           className="flex-shrink-0 w-3 h-3 ml-2 text-gray-400 fill-current"
                         />
                       )}
-                    </InertiaLink>
+                    </Link>
                   </td>
                   <td className="border-t">
-                    <InertiaLink
+                    <Link
                       tabIndex="-1"
                       href={route('users.edit', id)}
                       className="flex items-center px-6 py-4 focus:text-indigo focus:outline-none"
                     >
                       {email}
-                    </InertiaLink>
+                    </Link>
                   </td>
                   <td className="border-t">
-                    <InertiaLink
+                    <Link
                       tabIndex="-1"
                       href={route('users.edit', id)}
                       className="flex items-center px-6 py-4 focus:text-indigo focus:outline-none"
                     >
                       {owner ? 'Owner' : 'User'}
-                    </InertiaLink>
+                    </Link>
                   </td>
                   <td className="w-px border-t">
-                    <InertiaLink
+                    <Link
                       tabIndex="-1"
                       href={route('users.edit', id)}
                       className="flex items-center px-4 focus:outline-none"
@@ -90,7 +90,7 @@ const Index = () => {
                         name="cheveron-right"
                         className="block w-6 h-6 text-gray-400 fill-current"
                       />
-                    </InertiaLink>
+                    </Link>
                   </td>
                 </tr>
               );

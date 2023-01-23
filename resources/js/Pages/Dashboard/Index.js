@@ -1,5 +1,5 @@
 import React from 'react';
-import { InertiaLink } from '@inertiajs/inertia-react';
+import { Link } from '@inertiajs/react';
 import Layout from '@/Shared/Layout';
 
 const Dashboard = () => {
@@ -25,12 +25,12 @@ const Dashboard = () => {
         .
       </p>
       <div>
-        <InertiaLink className="mr-1 btn-indigo" href="/500">
+        <Link className="mr-1 btn-indigo" href="/500">
           500 error
-        </InertiaLink>
-        <InertiaLink className="btn-indigo" href="/404">
+        </Link>
+        <Link className="btn-indigo" href="/404">
           404 error
-        </InertiaLink>
+        </Link>
       </div>
     </div>
   );
